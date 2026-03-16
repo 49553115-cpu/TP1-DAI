@@ -9,22 +9,25 @@ votos = votos + 1
 
 textoVotos.innerText = "Votos: " + votos
 
-console.log("voto registrado")
-
 })
 
 
 const form = document.getElementById("formPropuesta")
-
+e.preventDefault()
 form.addEventListener("submit", function(e){
 
 let nombre = document.getElementById("nombre").value
 let idea = document.getElementById("idea").value
 
-if(nombre == "" || idea == ""){
+    if(nombre === "" || idea === ""){
 
-document.getElementById("mensaje").innerText = "Completa todos los campos"
+        document.getElementById("mensaje").innerText = "Completa todos los campos"
 
-}
+    }
+    else
+    { 
+            document.getElementById("mensaje").innerText = "Propuesta enviada correctamente"
+
+    }
 
 })
